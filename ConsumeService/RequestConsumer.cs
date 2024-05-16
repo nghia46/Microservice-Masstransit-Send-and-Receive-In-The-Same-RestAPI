@@ -8,10 +8,10 @@ namespace InventoryService
         public async Task Consume(ConsumeContext<RequestMessage> context)
         {
             // Xử lý yêu cầu và tạo response
-            var result = $"Processed: {context.Message.Message}";
+            var result = context.Message.Message;
 
             // Gửi response vào hàng đợi phản hồi
-            await context.RespondAsync(new ResponseMessage { Response = "Bạn Quá Đẹp Trai"+result});
+            await context.RespondAsync(new ResponseMessage { Response = "This Message been execute in consume service: "+result});
         }
     }
 }

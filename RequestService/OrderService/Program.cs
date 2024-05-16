@@ -21,10 +21,7 @@ builder.Services.AddMassTransit(config =>
     config.UsingRabbitMq((ctx, cfg) =>
     {
         cfg.Host("rabbitmq://guest:guest@localhost:5672");
-
-
     });
-    
 });
 // Add MassTransit hosted service
 builder.Services.AddHostedService<MassTransitHostedService>();
